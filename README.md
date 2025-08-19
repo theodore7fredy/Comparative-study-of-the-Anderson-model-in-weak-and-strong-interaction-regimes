@@ -42,9 +42,14 @@ We provide scripts to **presente the kondo effects and hubbards pics at the ferm
 The Singe Interaction Anderson Model Hamiltonian:
 
 $$
-H = \epsilon_d \sum_\sigma n_\sigma + U n_\uparrow n_\downarrow +
-\sum_{k,\alpha,\sigma} \epsilon_{k\alpha}\, c^\dagger_{k\alpha\sigma} c_{k\alpha\sigma} +
-\sum_{k,\alpha,\sigma}\big( V_{k\alpha}\, d^\dagger_\sigma c_{k\alpha\sigma} + \text{h.c.} \big),
+H = \varepsilon \left( d_{\uparrow}^\dagger d_{\uparrow} + d_{\downarrow}^{\dagger}
+d_{\downarrow} \right) + U \left( d_{\uparrow}^\dagger d_{\uparrow}
+d_{\downarrow}^{\dagger} d_{\downarrow} \right) +
+\sum_{\alpha = L, R} \sum_{\sigma_f = \uparrow, \downarrow} \sum_k
+\varepsilon_{\alpha, \sigma_f, k} c_{\alpha, \sigma_f, k}^\dagger c_{\alpha, \sigma_f, k} +
+\sum_{\alpha = L, R} \sum_{\sigma_f = \uparrow, \downarrow} \sum_k \left(
+g_{\alpha, k} c_{\alpha, \sigma_f, k}^\dagger d_{\sigma_f} + g_{\alpha, k}^*
+d_{\sigma_f}^{\dagger} c_{\alpha, \sigma_f, k} \right),
 $$
 
 with \(\alpha \in \{L, R\}\) leads (chemical potentials \(\mu_L,\mu_R\)) and temperature \(T\).
