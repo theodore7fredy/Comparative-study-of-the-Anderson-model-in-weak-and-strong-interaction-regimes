@@ -47,20 +47,22 @@ d_{\downarrow} \right) + U \left( d_{\uparrow}^\dagger d_{\uparrow}
 d_{\downarrow}^{\dagger} d_{\downarrow} \right) +
 \sum_{\alpha = L, R} \sum_{\sigma_f = \uparrow, \downarrow} \sum_k
 \varepsilon_{\alpha, \sigma_f, k} c_{\alpha, \sigma_f, k}^\dagger c_{\alpha, \sigma_f, k} +
-\sum_{\alpha = L, R} \sum_{\sigma_f = \uparrow, \downarrow} \sum_k \left(
+\sum_{\alpha = L, R} \sum_{\sigma_f = \uparrow, \downarrow} \sum_k
 g_{\alpha, k} c_{\alpha, \sigma_f, k}^\dagger d_{\sigma_f} + g_{\alpha, k}^*
-d_{\sigma_f}^{\dagger} c_{\alpha, \sigma_f, k} \right),
+d_{\sigma_f}^{\dagger} c_{\alpha, \sigma_f, k},
 $$
 
-with \(\alpha \in \{L, R\}\) leads (chemical potentials \(\mu_L,\mu_R\)) and temperature \(T\).
-- **Weak interaction**: Kondo resonance near \(\omega=0\).
-- **Strong interaction**: Kondo peak suppressed; **Hubbard peaks** near \(\epsilon_d\) and \(\epsilon_d + U\).
+with $\(\alpha \in \{L, R\}\)$ leads (chemical potentials $\(\mu_L,\mu_R\))$ and temperature $\(T\)$.
+- **Weak interaction**: Kondo resonance near $\(\omega=0\)$, **Hubbard peaks** near $\(\epsilon_d\) and \(\epsilon_d + U\)$.
+- **Strong interaction**: Kondo peak suppressed; **Hubbards peaks diverges**
 
 ---
 
 ## Methods
-- **Julia / `HierarchicalEOM.jl`**: HEOM based on **influence functional decomposition**, efficient for deep hierarchies.
-- **Python / `QuTiP`**: HEOM following the **Tanimura** formalism; user-friendly prototyping and integration with the broader QuTiP ecosystem.
+- **Julia / `HierarchicalEOM.jl`**: HEOM based on **collection of methods to compute bosonic
+and fermionic spectra, stationary states, and the full dynamics in the extended space of all
+Auxiliary Statistical Operators (ASOs)**, efficient for deep hierarchies.
+- **Python / `QuTiP`**: HEOM following the **Tanimura** formalism with respect hierarchie; user-friendly prototyping and integration with the broader QuTiP ecosystem.
 
 Key numerical controls (both stacks):
 - Hierarchy depth / truncation
