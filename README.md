@@ -5,7 +5,7 @@
 [![Julia](https://img.shields.io/badge/Julia-1.10%2B-blue)]()
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue)]()
 
-> This repository presents a side-by-side, reproducible comparison of the **single-impurity Anderson model (SIAM)** across **weak** and **strong** interaction regimes, using **HierarchicalEOM.jl** (Julia, influence functional decomposition) and **QuTiP** (Python, Tanimura HEOM).
+> This repository presents a systematically analyzing key observables, including spectral density $A(\omega)$, impurity occupation, time-dependent current, and differential conductance for the single impurity coupled to two fermionic reservoirs (Anderson model) for weak and strong interaction regimes and we reveal clear and quantifiable contrasts, using **HierarchicalEOM.jl** ( based on Julia) and **QuTiP** (based in Python).
 
 ---
 
@@ -28,24 +28,25 @@
 ---
 
 ## Overview
-We benchmark two HEOM implementations on the SIAM to capture:
+We benchmark two HEOM implementations on the Single Impurity Anderson Model to capture:
 - **Spectral density** \(A(\omega)\)
 - **Occupation** \(\langle n_\sigma \rangle\)
-- **Current and differential conductance**
-- **Kondo resonance** (in weak/intermediate interaction regimes)
-- **Hubbard side peaks** (strong interaction)
+- **Electric Current** \(I(\omega)\)
+- **Differential Conductance** \(G(\omega)\)
 
-We provide scripts to **reproduce datasets**, **re-generate all plots**, and **compare** runtime, accuracy, and convergence behavior (hierarchy depth, quadrature/Padé parameters, etc.).
+We provide scripts to **presente the kondo effects and hubbards pics at the fermi level**, **generate all plots**, and **compare for the two cases (weak and strong)** runtime, accuracy, and convergence behavior (hierarchy depth, quadrature/Padé parameters, etc.).
 
 ---
 
 ## Physics background
-The SIAM Hamiltonian:
+The Singe Interaction Anderson Model Hamiltonian:
+
 \[
 H = \epsilon_d \sum_\sigma n_\sigma + U n_\uparrow n_\downarrow +
 \sum_{k,\alpha,\sigma} \epsilon_{k\alpha}\, c^\dagger_{k\alpha\sigma} c_{k\alpha\sigma} +
 \sum_{k,\alpha,\sigma}\big( V_{k\alpha}\, d^\dagger_\sigma c_{k\alpha\sigma} + \text{h.c.} \big),
 \]
+
 with \(\alpha \in \{L, R\}\) leads (chemical potentials \(\mu_L,\mu_R\)) and temperature \(T\).
 - **Weak interaction**: Kondo resonance near \(\omega=0\).
 - **Strong interaction**: Kondo peak suppressed; **Hubbard peaks** near \(\epsilon_d\) and \(\epsilon_d + U\).
